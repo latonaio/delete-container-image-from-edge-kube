@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: delete-container-image-from-edge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      role: delete-container-image-from-edge
+  template:
+    metadata:
+      labels:
+        role: delete-container-image-from-edge
+    spec:
+      serviceAccount: controller-serviceaccount
+      # hostNetwork: true
+      containers:
+        - name: delete-container-image-from-edge
+          image: delete-container-image-from-edge:latest
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - mountPath: /var/run/docker.sock
+              name: docker-sock-volume
+              readOnly: true
+            # for development
+            # - name: scripts
+            #   mountPath: /var/lib/aion/Runtime/delete-container-image-from-edge/delete_container_image_from_edge_kube
+      volumes:
+        - name: docker-sock-volume
+          hostPath:
+            path: /var/run/docker.sock
+        # for development
+        # - name: scripts
+        #   hostPath:
+        #     path: /home/latona/vega/KubernetesYaml/delete-container-image-from-edge-kube/delete_container_image_from_edge_kube

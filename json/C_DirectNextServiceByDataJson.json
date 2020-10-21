@@ -1,0 +1,13 @@
+{
+    "connections": {
+        "default": {
+            "outputDataPath": "/var/lib/aion/Data/sample-microservice_1",
+            "metadata": {
+                "project_name": "sample-project",
+                "microservice_name": "nginx",
+                "ip": "192.168.128.161",
+                "port": "31112"
+            }
+        }
+    }
+}

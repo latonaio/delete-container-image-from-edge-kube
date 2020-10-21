@@ -1,0 +1,7 @@
+requests==2.21.0
+pyyaml==3.12
+kubernetes==11.0.0
+protobuf==3.11.3
+docker==3.7.3
+pycurl==7.43.0.5
+simplejson==3.17.2

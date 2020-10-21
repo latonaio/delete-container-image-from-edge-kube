@@ -1,0 +1,17 @@
+microservices:
+  sample-microservice:
+    command: python3 ./python/main.py
+    startup: yes
+    scale: 1
+    nextService:
+      default:
+        - name: delete-container-image-from-edge
+          pattern: "n"
+  delete-container-image-from-edge:
+    command: python3 ./delete-container-image-from-edge
+    scale: 1
+    multiple: yes
+    serviceAccount: controller-serviceaccount
+    env:
+      REGISTRY_USER: aion
+      REGISTRY_PASSWORD: aion

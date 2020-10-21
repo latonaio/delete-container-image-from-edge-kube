@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: delete-container-image-from-edge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      role: delete-container-image-from-edge
+  template:
+    metadata:
+      labels:
+        role: delete-container-image-from-edge
+    spec:
+      serviceAccount: controller-serviceaccount
+      containers:
+      - name: delete-container-image-from-edge
+        image: delete-container-image-from-edge:latest
+        imagePullPolicy: IfNotPresent

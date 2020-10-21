@@ -1,0 +1,9 @@
+import os
+
+SERVICE_NAME = os.environ.get("SERVICE")
+KUBERNETES_PACKAGE = "kubernetes"
+DELETED_STATUS_INDEX = "802"
+SUCCEED_STATUS_INDEX = "803"
+FAILED_STATUS_INDEX = "980"
+VOLUME_TYPE_PVC = "persistentVolumeClaim"
+VOLUME_TYPE_HOST_PATH = "hostPath"
