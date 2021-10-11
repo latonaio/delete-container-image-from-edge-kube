@@ -5,7 +5,7 @@
             "metadata": {
                 "project_name": "sample-project",
                 "microservice_name": "nginx",
-                "ip": "192.168.128.161",
+                "ip": "192.168.XXX.XXX",
                 "port": "31112"
             }
         }

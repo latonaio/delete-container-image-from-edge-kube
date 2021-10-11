@@ -94,5 +94,5 @@ class ManifestHeader():
         # 23 -> len("Docker-Content-Digest: ")
         # 94 -> end of digest
 
-        # e.g. sha256:b84fef817adb07964c630b574e6eee45bd156dd1cbb2f257ff570d7339cd1417
+        # e.g. sha256:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
         return digest_header[23:94] if digest_header is not None else None

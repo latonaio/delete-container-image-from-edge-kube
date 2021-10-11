@@ -13,5 +13,5 @@ microservices:
     multiple: yes
     serviceAccount: controller-serviceaccount
     env:
-      REGISTRY_USER: aion
-      REGISTRY_PASSWORD: aion
+      REGISTRY_USER: XXXX
+      REGISTRY_PASSWORD: XXXX
